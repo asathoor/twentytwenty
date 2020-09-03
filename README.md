@@ -1,6 +1,14 @@
 # Per's Commented version for Multimedia Students
 
-I have forked the theme, but it is shipped with WordPress. This fork is meant as a reference for child theme development.
+Most of WordPress themes follow a file naming convention. Knowing what a file does is important if you edit a theme. All themes will at least have these files:
+
+* style.css
+* functions.php
+* index.php
+
+If you want to, it is possible to create a theme with just three files.
+
+I have forked the theme from Github. Hence this fork is a *reference* for frontend developers.
 
 ## The files
 
