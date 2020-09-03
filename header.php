@@ -18,9 +18,18 @@
 		<meta charset="<?php bloginfo( 'charset' ); ?>">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" >
 
+		<!-- SEO / SoMe Issues
+		---- Add relevant tags below
+		---- either manually or via functions.php
+		-->
+
+
 		<link rel="profile" href="https://gmpg.org/xfn/11">
 
-		<?php wp_head(); ?>
+		<?php
+			/* will get header stuff such as <title> etc. */
+			wp_head();
+		?>
 
 	</head>
 

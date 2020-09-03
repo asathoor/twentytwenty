@@ -1,0 +1,97 @@
+# Understanding the files
+
+In the list below you can read about the the most important files of this theme and what they do. If you want to tweak one of them the general recipe is:
+
+* A) Copy the file to your child theme folder.
+* B) If it's found in a subfolder make sure that you have a similar directory structure in the child theme.
+* C) In the child theme folder: edit the file you copied.
+
+For instance if you want to add content to the footer, you'll have to copy the footer.php to the childtheme. Then you can edit the file.
+
+## File list
+
+### 404.php
+
+"Page does not exist" or a general error page. A well designed 404 page will help the user. Make sure that they'll find a search form, see searchform.php.
+
+### comments.php
+
+Display comments for pages / posts
+
+### footer.php
+
+The stuff found in the footer section.
+
+### functions.php
+
+Don't copy this file to your child theme folder. If you want to add funtionality you must edit the function.php file in your child theme folder.
+
+### header.php
+
+All the stuff in the header from the start of the html more or less to the menu.
+
+### index.php
+
+Here is the main template file. A rather [long series of conditionals](https://github.com/asathoor/twentytwenty/blob/master/index.php#L20-L112) decide which template parts should be loaded. The main content is looped out into this tag:
+
+~~~~
+<main id="site-content" role="main">
+
+</main>
+~~~~
+
+The PHP will produce semantic HTML. If you want to tweak the file, or find out which ids or classes belong to a section, you should search out relevant HTML tags, e.g.
+
+* The `<header>` [is here](https://github.com/asathoor/twentytwenty/blob/master/index.php#L58-L72)
+* The posts are looped out [here](https://github.com/asathoor/twentytwenty/blob/master/index.php#L77-L90)
+* If it's a search the relevant template part will be loaded [here](https://github.com/asathoor/twentytwenty/blob/master/index.php#L77-L90)
+
+You can use this page as a model when you want to add costum pages or templates. Please refer to the WP template hierarchy in the Developer's Handbook:
+
+* [The WordPress Template Hierarchy](https://wphierarchy.com/)
+* [Developer's Handbook](https://developer.wordpress.org/themes/basics/template-hierarchy/)
+
+
+### postcss.config.js
+
+Script.
+
+### print.css
+
+If print styles are needed edit the style.css in your child theme folder.
+
+### screenshot.png
+
+Download this file. Edit the file either preferably in GIMP, or if you cannot help it use Photoshop. Upload your creative screenshot.png to your childtheme's folder on the web host. Now have a look at the themes in your Dashboard.
+
+### searchform.php
+
+You can tweak the search form here. [Get more info about it here](https://developer.wordpress.org/reference/functions/get_search_form/).
+
+### singular.php
+
+The template for displaying single posts and pages.
+
+Used in the template hierarchy if you don't have a page.php. It is used for full width templates, see the *templates/* comment.
+
+### style.css
+
+Here are the styles that the child theme will import via it's functions.php. Don't copy this file to your child theme folder. Add whatever changes you need in the childtheme folder's style.css.
+
+### style-rtl.css
+
+See the style.css comment.
+
+### templates/
+
+Here you find a few interesting files:
+
+* template-cover.php
+* template-full-width.php
+
+The last file is a fine example of WordPress includes. The template will simply import singular.php:
+
+~~~~
+<?php
+get_template_part( 'singular' );
+~~~~
